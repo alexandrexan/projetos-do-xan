@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Alexandre (Xan) Araujo — desenvolvedor frontend. Projetos em HTML, CSS, JavaScript e React. Contato, CV e demais informações.">
+    <meta property="og:title" content="Alexandre (Xan) Araujo — Desenvolvedor Frontend">
+    <meta property="og:description" content="Portfólio — projetos, skills e contato.">
+    <meta property="og:type" content="website">
+
     <title>Alexandre Araujo - Frontend Developer</title>
     
     <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
     <link rel="shortcut icon" href="favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <meta name="apple-mobile-web-app-title" content="Alexandre Araujo" />
     <link rel="manifest" href="/site.webmanifest" />
 
     <link rel="stylesheet" href="style.css">
@@ -17,127 +22,134 @@
 
 </head>
 <body>
-    <div class="scroll-indicator" id="scrollIndicator"></div>
-    
+    <div class="wrap">
+
     <header>
-        <nav>
-            <div class="logo">{ dev.junior }</div>
-            <ul class="nav-links">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#projects">Projetos</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
+        <div class="brand">
+                <div class="logo" aria-hidden="true">
+                    <img src="img/aap-foto.jpg" alt="Foto de Alexandre Xan">
+                </div>
+                <div>
+                    <div style="font-weight:700">Alexandre (Xan) Araujo</div>
+                    <div class="small muted">Desenvolvedor Front-End em evolução</div>
+            </div>
+        </div>
+        
+        <nav aria-label="Navegação principal">
+            <a href="#sobre">Sobre</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#curiosidades">Curiosidades</a>
+            <a href="#contato">Contato</a>
         </nav>
     </header>
-
+    
     <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <div class="hero-subtitle">Olá! Eu sou</div>
-                <h1>Desenvolvedor Frontend</h1>
-                <p class="hero-description">
-                    Estudante apaixonado por criar interfaces bonitas e funcionais. 
-                    Sempre aprendendo novas tecnologias e buscando melhorar minhas habilidades em desenvolvimento web.
-                </p>
-                <a href="#projects" class="cta-button">Ver meus projetos</a>
+        <section class="hero">
+            <h1>Interfaces limpas, responsivas e acessíveis.</h1>
+            <p><strong>Front-End Developer em evolução</strong>, entusiasta por criar interfaces funcionais, modernas e com ótima experiência de uso.</p>
+            <div class="ctas">
+                <a class="btn" href="#projetos">Ver projetos</a>
+                <a class="btn ghost" href="cv-xan/cv-alexandreap-dev.pdf" download>Baixar CV</a>
+            </div>
+        </section>
+        
+        <section class="card" id="sobre">
+                <h2>Sobre mim</h2>
+                <p>Sou desenvolvedor Front-End em evolução, entusiasta por transformar ideias em interfaces funcionais e atraentes. Tenho experiência prática com projetos pessoais e estudo constante de tecnologias modernas, com foco em React, JavaScript, HTML e CSS. Estou sempre em busca de aprender novas ferramentas e aplicar boas práticas de UI/UX para entregar resultados de qualidade. Tenho disciplina, curiosidade e disposição para enfrentar desafios e crescer junto com a equipe.
+                <p>
+                    
+                <div class="skills">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Git, GitHub</span>
+                </div>
+        </section>
+
+        <section class="card" id="projetos">
+            <h2>Projetos</h2>
+            <div class="projects">
+
+            <article class="proj">
+                <h3>Conversor de Moedas R$ > US$</h3>
+                <p>SPA que consome API de câmbio, valida inputs e formata valores em tempo real.</p>
+                <div class="links">
+                    <a class="tag" href="https://alexandrexan.github.io/conversor-de-moedas/" target="_blank">Demo</a>
+                    <a class="tag" href="https://github.com/alexandrexan/conversor-de-moedas" target="_blank">Código</a>
+                </div>
+            </article>
+
+            <article class="proj">
+                <h3>Número Secreto (Game)</h3>
+                <p>Jogo educativo em JavaScript, praticando DOM manipulation, lógica e eventos de usuário.</p>
+                <div class="links">
+                    <a class="tag" href="https://alexandrexan.github.io/logica-js-projeto_inicial/" target="_blank">Demo</a>
+                    <a class="tag" href="https://github.com/alexandrexan/logica-js-projeto_inicial" target="_blank">Código</a>
+                </div>
+            </article>
+
+            <article class="proj">
+                <h3>Cidade de Mentira</h3>
+                <p>Página com layout responsivo e navegação dinâmica.</p>
+                <div class="links">
+                    <a class="tag" href="https://alexandrexan.github.io/projeto-cidade-de-mentira/" target="_blank">Demo</a>
+                    <a class="tag" href="https://github.com/alexandrexan/projeto-cidade-de-mentira" target="_blank">Código</a>
+                </div>
+            </article>
+
+            <article class="proj">
+                <h3>Mika Pets</h3>
+                <p>Landing page responsiva para serviço de cuidados para cães, com design limpo e navegação intuitiva. Inclui seções de serviços, pets e contato. Criado com HTML, CSS e JavaScript.</p>
+                <div class="links">
+                    <a class="tag" href="https://alexandrexan.github.io/mika-pets/#" target="_blank">Demo</a>
+                    <a class="tag" href="https://github.com/alexandrexan/mika-pets" target="_blank">Código</a>
+                </div>
+            </article>
+
+            <article class="proj">
+                <h3>Projeto Android</h3>
+                <p>Página temática sobre Android, explorando imagens e organização de conteúdo.</p>
+                <div class="links">
+                    <a class="tag" href="https://alexandrexan.github.io/projeto-android/" target="_blank">Demo</a>
+                    <a class="tag" href="https://github.com/alexandrexan/projeto-android" target="_blank">Código</a>
+                </div>
+            </article>
+
             </div>
         </section>
 
-        <section id="about" class="about">
-            <h2 class="section-title">Sobre mim</h2>
-            <div class="about-text">
-                Sou um desenvolvedor frontend júnior com foco em criar experiências web modernas e responsivas. 
-                Estou constantemente aprendendo e aplicando novas tecnologias em meus projetos pessoais. 
-                Adoro transformar ideias em código e ver o resultado ganhar vida no navegador!
+        <section class="card" id="curiosidades">
+            <h2>Curiosidades 🎵</h2>
+
+            <div class="curiosidades-container">
+                    <div class="curiosidade-card soundcloud-card">
+                    <div class="card-content">
+                    <div class="icon">🎧</div>
+                <div class="desc">
+                    <p>Além do desenvolvimento, produzo música no meu tempo livre.</p>
+                    <a class="btn" href="https://soundcloud.com/xampsbeatz" target="_blank">Ouvir no SoundCloud</a>
+                    <a class="botao-yt" href="https://www.youtube.com/@xampsbeatz" target="_blank">Ouvir no YouTube</a>
+                </div>
             </div>
-            
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>🎨 Frontend</h3>
-                    <p>HTML5, CSS3, JavaScript, React (básico), Responsive Design, Flexbox, CSS Grid, SASS</p>
-                </div>
-                <div class="skill-card">
-                    <h3>🛠️ Ferramentas</h3>
-                    <p>Git, GitHub, VS Code, Figma, Chrome DevTools, Netlify, Vercel</p>
-                </div>
             </div>
         </section>
 
-        <section id="projects">
-            <h2 class="section-title">Meus Projetos</h2>
-            
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">🌐</div>
-                    <div class="project-content">
-                        <h3>Landing Page Responsiva</h3>
-                        <p>Minha primeira landing page totalmente responsiva, criada com HTML, CSS e JavaScript vanilla.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Ver projeto</a>
-                            <a href="#" class="project-link github">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">📝</div>
-                    <div class="project-content">
-                        <h3>Lista de Tarefas</h3>
-                        <p>App simples para gerenciar tarefas do dia a dia, com funcionalidades de adicionar, marcar como concluída e excluir.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Ver projeto</a>
-                            <a href="#" class="project-link github">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">🎮</div>
-                    <div class="project-content">
-                        <h3>Jogo da Memória</h3>
-                        <p>Jogo da memória interativo com diferentes níveis de dificuldade, criado para praticar lógica em JavaScript.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Ver projeto</a>
-                            <a href="#" class="project-link github">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+        <section class="card" id="contato">
+            <h2>Contato</h2>
+            <p>Quer conversar sobre oportunidades ou projetos? Me mande uma mensagem!</p>
+            <p><strong>Email:</strong> <a href="mailto:xampsbeatz@gmail.com">xampsbeatz@gmail.com</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alexandreap/" target="_blank">linkedin.com/in/alexandreap/</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/alexandrexan" target="_blank">github.com/alexandrexan</a></p>
         </section>
 
-        <section id="contact" class="contact">
-            <h2 class="section-title">Vamos conversar!</h2>
-            <p>
-                Estou sempre aberto para feedback, dicas e novas oportunidades de aprendizado
-            </p>
-            
-            <div class="contact-links">
-                <a href="mailto:seu.email@gmail.com" class="contact-link">
-                    📧 Email
-                </a>
-                <a href="https://linkedin.com/in/seuperfil" class="contact-link">
-                    💼 LinkedIn
-                </a>
-                <a href="https://github.com/seugithub" class="contact-link">
-                    💻 GitHub
-                </a>
-            </div>
-        </section>
+    </main>
+
+        <footer>
+            <div class="muted">© <span id="year"></span> Alexandre (Xan) Araujo — Desenvolvedor Front-End</div>
+        </div>
+    </footer>
+
+    </div>
 </body>
 </html>

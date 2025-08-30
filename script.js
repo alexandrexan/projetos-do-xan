@@ -1,32 +1,5 @@
-window.addEventListener('scroll', () => {
-            const scrolled = (window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            document.getElementById('scrollIndicator').style.transform = `scaleX(${scrolled / 100})`;
-        });
+// small JS: dynamic year + basic accessibility focus management
+document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Simple scroll animations
-        window.addEventListener('scroll', () => {
-            const cards = document.querySelectorAll('.skill-card, .project-card');
-            cards.forEach(card => {
-                const cardTop = card.getBoundingClientRect().top;
-                const cardVisible = 150;
-                
-                if (cardTop < window.innerHeight - cardVisible) {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }
-            });
-        });
+// progressive enhancement: keyboard focus visible already via CSS :focus
+// lazy-loading images example: add loading="lazy" to <img> tags where used
