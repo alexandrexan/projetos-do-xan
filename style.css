@@ -76,10 +76,31 @@ nav a {
     text-decoration: none;
     margin-left: 18px;
     font-size: 0.95rem;
+    transition: color 0.2s ease-in-out;
+    display: inline-block;
+    position: relative;
 }
 
 nav a:hover {
     color: var(--text);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--accent);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 .hero {
@@ -90,54 +111,61 @@ nav a:hover {
     margin: 28px 0;
 }
 
-/* Container para alinhar os cards lado a lado */
+    /* Container para alinhar os cards lado a lado */
 .curiosidades-container {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap; /* responsivo: quebra linha em telas pequenas */
-  margin-top: 12px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap; /* responsivo: quebra linha em telas pequenas */
+    margin-top: 12px;
 }
 
-/* Cards base */
+    /* Cards base */
 .curiosidade-card {
-  flex: 1; /* divide espaço igualmente */
-  min-width: 250px; /* garante tamanho mínimo em mobile */
-  padding: 18px 20px;
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  transition: background 0.3s, transform 0.2s;
+    flex: 1; /* divide espaço igualmente */
+    min-width: 250px; /* garante tamanho mínimo em mobile */
+    padding: 18px 20px;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: background 0.3s, transform 0.2s;
 
 }
 
-/* Card SoundCloud laranja */
-.soundcloud-card .btn { background: #FFA500; }
-.soundcloud-card .btn:hover { background: #cc8400; }
-.botao-yt:hover { background: #cc0000; }
+    /* Card SoundCloud laranja */
+.soundcloud-card .btn {
+    background: #ff9533;
+}
 
 .botao-yt {
     display: inline-block;
-  padding: 8px 14px;
-  color: #fff;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.2s;
-  background: red;
+    padding: 8px 14px;
+    color: #ffffff;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+    background: #FF0000;
 }
 
 /* Ícones e texto */
-.curiosidade-card .icon { font-size: 2.2rem; }
-.curiosidade-card .desc p { margin: 0 0 8px 0; color: var(--text); }
+.curiosidade-card .icon { 
+    font-size: 2.2rem; 
+}
+
+.curiosidade-card .desc p { 
+    margin: 0 0 8px 0; 
+    color: var(--text); 
+}
+
 .curiosidade-card .desc .btn {
-  display: inline-block;
-  padding: 8px 14px;
-  color: #fff;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.2s;
+    display: inline-block;
+    padding: 8px 14px;
+    color: #ffffff;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
 }
 
 
@@ -150,9 +178,11 @@ nav a:hover {
 .hero h1{
     font-size:2rem;margin:0 0 8px
 }
+
 .hero p {
     margin:0;color:var(--muted);
 }
+
 .ctas {
     margin-top:18px;
     display:flex;
@@ -178,50 +208,125 @@ nav a:hover {
     border:1px solid rgba(255,255,255,0.06);
     color:var(--text);
 }
+
 section.card {
     background:var(--card);
     padding:18px;
     border-radius:var(--radius);
-    box-shadow:0 6px 18px rgba(2,6,10,0.6);
-    border:1px solid rgba(255,255,255,0.02);
+    box-shadow:0 6px 18px #02060a99;
+    border:1px solid #ffffff05;
 }
+
 .skills {
     display:flex;
     flex-wrap:wrap;
     gap:10px;
     margin-top:12px;
 }
+
 .tag {
-    background:rgba(255,255,255,0.03);
+    background:#ffffff08;
     padding:8px 10px;
     border-radius:8px;
     font-size:0.9rem;
     color:var(--muted);
 }
+
 .projects {
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:18px;
     margin-top:14px;
 }
+
 .proj {
     padding:14px;
     border-radius:12px;
-    background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);
+    background:linear-gradient(180deg,#ff000005,transparent);
 }
 
 .proj h3 {
     margin:0 0 8px
 }
+
 .proj p {
-    margin:0 0 12px;color:var(--muted);font-size:0.95rem
+    margin:0 0 12px; 
+    color:var(--muted); 
+    font-size:0.95rem
 }
+
 .links {
-    display:flex;gap:8px;flex-wrap:wrap
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
 }
+
 .small {
-    font-size:0.85rem;color:var(--muted)
+    font-size:0.85rem;
+    color:var(--muted);
 }
+
+.proj .links .tag {
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    position: relative;
+    display: inline-block;
+    padding: 2px 4px;
+}
+
+.proj .links .tag:hover {
+    color: var(--text);
+}
+
+.proj .links .tag::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.proj .links .tag:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#contato a {
+    text-decoration: none;
+    color: var(--accent);
+    transition: color 0.2s ease-in-out;
+    position: relative;
+    display: inline-block;
+    padding: 2px 4px;
+}
+
+#contato a:hover {
+    color: var(--text);
+}
+
+#contato a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+#contato a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
 footer {
     margin-top: 28px;
     padding: 18px;
@@ -234,6 +339,7 @@ footer {
     flex-wrap: wrap;
     gap: 10px;
 }
+
 a:focus {
     outline: 3px solid rgba(124, 92, 255, 0.18);
     outline-offset: 3px;
@@ -246,6 +352,7 @@ img {
     border-radius: 8px;
     display: block;
 }
+
 form input,form textarea {
     width: 100%;
     padding: 10px;
@@ -254,6 +361,7 @@ form input,form textarea {
     background: #071216;
     color: var(--text);
 }
+
 .muted {
     color: var(--muted);
     }
