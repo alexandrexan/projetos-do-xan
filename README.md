@@ -14,7 +14,7 @@ Welcome to my **online portfolio** — A website built to present my profile, sk
 ---
 
 ## 🚀 Demonstração | Live Demo
-🔗 [EM BREVE | COMING SOON](https://SEU-LINK-AQUI)
+🔗 [Clique aqui! | Click here!](https://alexandrexan.github.io/projetos-do-xan/)
 
 ---
 
