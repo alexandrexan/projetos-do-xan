@@ -129,7 +129,6 @@ nav a:hover::after {
     align-items: center;
     gap: 16px;
     transition: background 0.3s, transform 0.2s;
-
 }
 
     /* Card SoundCloud laranja */
