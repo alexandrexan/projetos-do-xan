@@ -207,6 +207,15 @@ nav a:hover::after {
     cursor: pointer;
 }
 
+.btn, .tag, .botao-yt {
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    padding: 8px 14px;
+    display: inline-block;
+}
+
 .btn.ghost {
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.06);
@@ -388,4 +397,9 @@ form input,form textarea {
 
 .muted {
     color: var(--muted);
-    }
+}
+
+.card-hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
