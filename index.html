@@ -10,7 +10,7 @@
     <meta property="og:description" content="Portfólio — projetos, skills e contato.">
     <meta property="og:type" content="website">
 
-    <title>Alexandre Araujo - Frontend Developer</title>
+    <title data-lang-str="title">Alexandre Araujo - Desenvolvedor Front-End</title>
 
     <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
@@ -26,6 +26,11 @@
 
 <body>
     <div class="wrap">
+        <div class="language-buttons">
+        <button onclick="loadLanguage('pt-br')">🇧🇷 PT-BR</button>
+        <button onclick="loadLanguage('en')">🇺🇸 EN</button>
+        <button onclick="loadLanguage('es')">🇪🇸 ES</button>
+    </div>
 
         <header>
             <div class="brand">
@@ -34,16 +39,17 @@
                 </div>
                 <div>
                     <div style="font-weight:700">Alexandre (Xan) Araujo</div>
-                    <div class="small muted">Desenvolvedor Front-End Júnior</div>
+                    <div class="small muted" data-lang-str="title">Desenvolvedor Front-end Júnior</div>
                 </div>
             </div>
 
             <nav aria-label="Navegação principal">
-                <a href="#sobre">Sobre</a>
-                <a href="#projetos">Projetos</a>
-                <a href="#curiosidades">Curiosidades</a>
-                <a href="#contato">Contato</a>
+                <a href="#sobre" data-lang-str="about">Sobre</a>
+                <a href="#projetos" data-lang-str="projects">Projetos</a>
+                <a href="#curiosidades" data-lang-str="curiosities">Curiosidades</a>
+                <a href="#contato" data-lang-str="contact">Contato</a>
             </nav>
+
         </header>
 
         <main>
@@ -214,7 +220,7 @@
         </main>
 
         <footer>
-            <div class="muted">© <span id="year"></span> Alexandre (Xan) Araujo — Desenvolvedor Front-End</div>
+            <div class="muted">© <span id="year"></span> Alexandre (Xan) Araujo — Desenvolvedor Front-end</div>
     </footer>
     
     </div>

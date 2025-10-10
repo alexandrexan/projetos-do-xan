@@ -52,3 +52,25 @@ function animarCardsProjetos() {
         card.addEventListener('mouseleave', () => card.classList.remove('card-hover'));
     });
 }
+
+async function loadLanguage(lang) {
+    try {
+        const res = await fetch(`translations/${lang}.json`);
+        const translations = await res.json();
+
+        document.querySelectorAll('[data-lang-str]').forEach(el => {
+        const key = el.getAttribute('data-lang-str');
+        if (translations[key]) el.textContent = translations[key];
+        });
+
+        document.documentElement.lang = lang;
+        localStorage.setItem('preferredLang', lang);
+        } catch (err) {
+        console.error('Erro ao carregar idioma:', err);
+    }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('preferredLang') || 'pt-br';
+        loadLanguage(savedLang);
+    });
