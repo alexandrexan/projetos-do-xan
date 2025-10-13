@@ -10,7 +10,7 @@
     <meta property="og:description" content="Portfólio — projetos, skills e contato.">
     <meta property="og:type" content="website">
 
-    <title data-lang-str="title">Alexandre Araujo - Desenvolvedor Front-End</title>
+    <title data-lang-str="title">Alexandre Araujo - Desenvolvedor Front-end</title>
 
     <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
@@ -26,11 +26,6 @@
 
 <body>
     <div class="wrap">
-        <div class="language-buttons">
-        <button onclick="loadLanguage('pt-br')">🇧🇷 PT-BR</button>
-        <button onclick="loadLanguage('en')">🇺🇸 EN</button>
-        <button onclick="loadLanguage('es')">🇪🇸 ES</button>
-    </div>
 
         <header>
             <div class="brand">
@@ -39,52 +34,56 @@
                 </div>
                 <div>
                     <div style="font-weight:700">Alexandre (Xan) Araujo</div>
-                    <div class="small muted" data-lang-str="title">Desenvolvedor Front-end Júnior</div>
+                    <div class="small muted" data-lang-str="title">Desenvolvedor Front-end</div>
                 </div>
             </div>
 
             <nav aria-label="Navegação principal">
-                <a href="#sobre" data-lang-str="about">Sobre</a>
+                <a href="#sobre" data-lang-str="about">Sobre mim</a>
                 <a href="#projetos" data-lang-str="projects">Projetos</a>
                 <a href="#curiosidades" data-lang-str="curiosities">Curiosidades</a>
                 <a href="#contato" data-lang-str="contact">Contato</a>
             </nav>
 
+            <div class="language-buttons">
+                <button onclick="loadLanguage('pt-br')" data-tooltip="Ver o site em Português do Brasil">PT-BR</button>
+                <button onclick="loadLanguage('en')" data-tooltip="View the site in English">EN</button>
+                <button onclick="loadLanguage('es')" data-tooltip="Ver el sitio en Español">ES</button>
+            </div>
+
         </header>
 
         <main>
             <section class="hero">
-                <h1>Aprendizado contínuo por meio de resultados concretos</h1>
+                <h1 data-lang-str="heroTitle">Aprendizado contínuo por meio de resultados concretos</h1>
                 <div class="ctas">
-                    <a class="btn" href="#projetos">Ver projetos</a>
-                    <a class="btn ghost" href="cv-xan/cv-alexandre-frontend-v3.pdf" download>Baixar CV</a>
+                    <a class="btn" href="#projetos" data-lang-str="heroBtnProjects">Ver projetos</a>
+                    <a class="btn ghost" href="cv-xan/cv-alexandre-frontend-v3.pdf" download data-lang-str="heroBtnCV">Baixar CV</a>
                 </div>
             </section>
 
             <section class="card" id="sobre">
-                <h2>Sobre mim</h2>
-                <p>Sou desenvolvedor Front-end, entusiasta por transformar ideias em interfaces funcionais e atraentes.
-                    Tenho experiência prática com projetos pessoais e estudo constante de tecnologias modernas, com foco
-                    em React, JavaScript, HTML e CSS. Estou sempre em busca de aprender novas ferramentas e aplicar boas
-                    práticas de UI/UX para entregar resultados de qualidade. Tenho disciplina, curiosidade e disposição
-                    para enfrentar desafios e crescer junto com a equipe.</p>
+                <h2 data-lang-str="about">Sobre mim</h2>
+                <p data-lang-str="aboutText">
+                    Sou desenvolvedor Front-end, entusiasta por transformar ideias em interfaces funcionais e atraentes. Tenho experiência prática com projetos pessoais e estudo constante de tecnologias modernas, com foco em React, JavaScript, HTML e CSS. Estou sempre em busca de aprender novas ferramentas e aplicar boas práticas de UI/UX para entregar resultados de qualidade. Tenho disciplina, curiosidade e disposição para enfrentar desafios e crescer junto com a equipe.
+                </p>
 
                 <div class="skills">
-                    <span class="tag">HTML</span>
-                    <span class="tag">CSS</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">Git, GitHub</span>
-                    <span class="tag">Node.js</span>
+                    <span class="tag" data-lang-str="skillsHTML">HTML</span>
+                    <span class="tag" data-lang-str="skillsCSS">CSS</span>
+                    <span class="tag" data-lang-str="skillsJS">JavaScript</span>
+                    <span class="tag" data-lang-str="skillsGit">Git, GitHub</span>
+                    <span class="tag" data-lang-str="skillsNode">Node.js</span>
                 </div>
             </section>
 
             <section class="card" id="projetos">
-                <h2>Projetos</h2>
+                <h2 data-lang-str="projectsTitle">Projetos em Destaque</h2>
                 <div class="projects">
 
                     <article class="proj">
-                        <h3>Conversor de Moedas R$ > US$</h3>
-                        <p>SPA que consome API de câmbio, valida inputs e formata valores em tempo real.</p>
+                        <h3 data-lang-str="project1Name">Conversor de Moedas R$ > US$</h3>
+                        <p data-lang-str="project1Desc">SPA que consome API de câmbio, valida inputs e formata valores em tempo real.</p>
 
                         <div class="tech-badges">
                             <span class="badge html">HTML</span>
@@ -93,16 +92,14 @@
                         </div>
 
                         <div class="links">
-                            <a class="tag link-animado" href="https://alexandrexan.github.io/conversor-de-moedas/"
-                                target="_blank">Demo</a>
-                            <a class="tag" href="https://github.com/alexandrexan/conversor-de-moedas"
-                                target="_blank">Código</a>
+                            <a class="tag link-animado" href="https://alexandrexan.github.io/conversor-de-moedas/" target="_blank" data-lang-str="project1Demo">Demo</a>
+                            <a class="tag" href="https://github.com/alexandrexan/conversor-de-moedas" target="_blank" data-lang-str="project1Code">Código</a>
                         </div>
                     </article>
 
                     <article class="proj">
-                        <h3>Número Secreto (Game)</h3>
-                        <p>Jogo educativo em JavaScript, praticando DOM manipulation, lógica e eventos de usuário.</p>
+                        <h3 data-lang-str="project2Name">Número Secreto (Game)</h3>
+                        <p data-lang-str="project2Desc">Jogo educativo em JavaScript, praticando DOM manipulation, lógica e eventos de usuário.</p>
 
                         <div class="tech-badges">
                             <span class="badge html">HTML</span>
@@ -111,16 +108,14 @@
                         </div>
 
                         <div class="links">
-                            <a class="tag link-animado" href="https://alexandrexan.github.io/logica-js-projeto_inicial/"
-                                target="_blank">Demo</a>
-                            <a class="tag" href="https://github.com/alexandrexan/logica-js-projeto_inicial"
-                                target="_blank">Código</a>
+                            <a class="tag link-animado" href="https://alexandrexan.github.io/logica-js-projeto_inicial/" target="_blank" data-lang-str="project1Demo">Demo</a>
+                            <a class="tag" href="https://github.com/alexandrexan/logica-js-projeto_inicial" target="_blank" data-lang-str="project1Code">Código</a>
                         </div>
                     </article>
 
                     <article class="proj">
-                        <h3>Cidade de Mentira</h3>
-                        <p>Página com layout responsivo e navegação dinâmica.</p>
+                        <h3 data-lang-str="project3Name">Cidade de Mentira</h3>
+                        <p data-lang-str="project3Desc">Página com layout responsivo e navegação dinâmica.</p>
 
                         <div class="tech-badges">
                             <span class="badge html">HTML</span>
@@ -128,17 +123,14 @@
                         </div>
 
                         <div class="links">
-                            <a class="tag link-animado" href="https://alexandrexan.github.io/projeto-cidade-de-mentira/"
-                                target="_blank">Demo</a>
-                            <a class="tag" href="https://github.com/alexandrexan/projeto-cidade-de-mentira"
-                                target="_blank">Código</a>
+                            <a class="tag link-animado" href="https://alexandrexan.github.io/projeto-cidade-de-mentira/" target="_blank" data-lang-str="project1Demo">Demo</a>
+                            <a class="tag" href="https://github.com/alexandrexan/projeto-cidade-de-mentira" target="_blank" data-lang-str="project1Code">Código</a>
                         </div>
                     </article>
 
                     <article class="proj">
-                        <h3>Mika Pets</h3>
-                        <p>Landing page responsiva para serviço de cuidados para cães, com design limpo e navegação
-                            intuitiva. Inclui seções de serviços, pets e contato. Criado com HTML, CSS e JavaScript.</p>
+                        <h3 data-lang-str="project4Name">Mika Pets</h3>
+                        <p data-lang-str="project4Desc">Landing page responsiva para serviço de cuidados para cães, com design limpo e navegação intuitiva.</p>
 
                         <div class="tech-badges">
                             <span class="badge html">HTML</span>
@@ -147,15 +139,14 @@
                         </div>
 
                         <div class="links">
-                            <a class="tag link-animado" href="https://alexandrexan.github.io/mika-pets/#"
-                                target="_blank">Demo</a>
-                            <a class="tag" href="https://github.com/alexandrexan/mika-pets" target="_blank">Código</a>
+                            <a class="tag link-animado" href="https://alexandrexan.github.io/mika-pets/" target="_blank" data-lang-str="project1Demo">Demo</a>
+                            <a class="tag" href="https://github.com/alexandrexan/mika-pets" target="_blank" data-lang-str="project1Code">Código</a>
                         </div>
                     </article>
 
                     <article class="proj">
-                        <h3>Projeto Android</h3>
-                        <p>Página temática sobre Android, explorando imagens e organização de conteúdo.</p>
+                        <h3 data-lang-str="project5Name">Projeto Android</h3>
+                        <p data-lang-str="project5Desc">Página temática sobre Android, explorando imagens e organização de conteúdo.</p>
 
                         <div class="tech-badges">
                             <span class="badge html">HTML</span>
@@ -163,17 +154,14 @@
                         </div>
 
                         <div class="links">
-                            <a class="tag link-animado" href="https://alexandrexan.github.io/projeto-android/"
-                                target="_blank">Demo</a>
-                            <a class="tag" href="https://github.com/alexandrexan/projeto-android"
-                                target="_blank">Código</a>
+                            <a class="tag link-animado" href="https://alexandrexan.github.io/projeto-android/" target="_blank" data-lang-str="project1Demo">Demo</a>
+                            <a class="tag" href="https://github.com/alexandrexan/projeto-android" target="_blank" data-lang-str="project1Code">Código</a>
                         </div>
                     </article>
 
                     <article class="proj">
-                        <h3>XAMPSBEATZ</h3>
-                        <p>Portfólio musical interativo para divulgação de beats, com foco em design minimalista e
-                            navegação fluida.</p>
+                        <h3 data-lang-str="project6Name">XAMPSBEATZ</h3>
+                        <p data-lang-str="project6Desc">Portfólio musical interativo para divulgação de beats, com foco em design minimalista e navegação fluida.</p>
 
                         <div class="tech-badges">
                             <span class="badge html">HTML</span>
@@ -182,9 +170,8 @@
                         </div>
 
                         <div class="links">
-                            <a class="tag link-animado" href="https://alexandrexan.github.io/xampsbeatz/"
-                                target="_blank">Demo</a>
-                            <a class="tag" href="https://github.com/alexandrexan/xampsbeatz" target="_blank">Código</a>
+                            <a class="tag link-animado" href="https://alexandrexan.github.io/xampsbeatz/" target="_blank" data-lang-str="project1Demo">Demo</a>
+                            <a class="tag" href="https://github.com/alexandrexan/xampsbeatz" target="_blank" data-lang-str="project1Code">Código</a>
                         </div>
                     </article>
 
@@ -192,37 +179,24 @@
             </section>
 
             <section class="card" id="curiosidades">
-                <h2>Curiosidades</h2>
-
-                <div class="curiosidades-container">
-                    <div class="curiosidade-card soundcloud-card">
-                        <div class="icon">🎧</div>
-                        <div class="desc">
-                            <p>Além do desenvolvimento, produzo música no meu tempo livre.</p>
-                            <a class="btn" href="https://soundcloud.com/xampsbeatz" target="_blank">Ouvir no SoundCloud</a>
-                            <a class="botao-yt" href="https://www.youtube.com/@xampsbeatz" target="_blank">Ouvir no YouTube</a>
-                        </div>
-                    </div>
-                </div>
+                <h2 data-lang-str="curiosities">Curiosidades</h2>
+                <p data-lang-str="curiositiesText">Além do desenvolvimento, produzo música no meu tempo livre.</p>
+                <a class="btn botao-sc" href="https://soundcloud.com/xampsbeatz" target="_blank" data-lang-str="soundcloud">Ouvir no SoundCloud</a>
+                <a class="btn botao-yt" href="https://www.youtube.com/@xampsbeatz" target="_blank" data-lang-str="youtube">Ouvir no YouTube</a>
             </section>
-
 
             <section class="card" id="contato">
-                <h2>Contato</h2>
-                <p>Quer conversar sobre oportunidades ou projetos? Me mande uma mensagem!</p>
+                <h2 data-lang-str="contact">Contato</h2>
                 <p><strong>Email:</strong> <a href="mailto:xampsbeatz@gmail.com">xampsbeatz@gmail.com</a></p>
-                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alexandreap/"
-                        target="_blank">linkedin.com/in/alexandreap/</a></p>
-                <p><strong>GitHub:</strong> <a href="https://github.com/alexandrexan"
-                        target="_blank">github.com/alexandrexan</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alexandreap/" target="_blank">linkedin.com/in/alexandreap/</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/alexandrexan" target="_blank">github.com/alexandrexan</a></p>
             </section>
-
         </main>
 
         <footer>
-            <div class="muted">© <span id="year"></span> Alexandre (Xan) Araujo — Desenvolvedor Front-end</div>
-    </footer>
-    
+        <div data-lang-str="footer">© Alexandre (Xan) Araujo — Desenvolvedor Front-end</div>
+        </footer>
+
     </div>
 </body>
 

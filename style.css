@@ -132,9 +132,13 @@ nav a:hover::after {
 }
 
     /* Card SoundCloud laranja */
-.soundcloud-card .btn {
-    background: #ff9533;
+.botao-sc {
+    background: #ff9533 !important;
     margin: 0 10px 0 0;
+}
+
+.botao-sc:hover {
+    background: #ff7f00 !important;
 }
 
 .botao-yt {
@@ -146,7 +150,11 @@ nav a:hover::after {
     font-weight: 600;
     text-decoration: none;
     transition: background 0.2s;
-    background: #ff0000;
+    background: #ff0000 !important;
+}
+
+.botao-yt:hover {
+    background: #cc0000 !important;
 }
 
 /* Ícones e texto */
@@ -401,4 +409,102 @@ form input,form textarea {
 .card-hover {
     transform: translateY(-5px);
     transition: transform 0.3s ease;
+}
+
+/* Container dos botões de idioma */
+.language-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-left: auto; /* empurra para a direita no header */
+}
+
+/* Botões de idioma */
+.language-buttons button {
+    position: relative;
+    background: var(--card); /* mesma cor do card */
+    border: 1px solid var(--accent);
+    color: var(--text);
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.9rem;
+}
+
+/* Hover / foco */
+.language-buttons button:hover,
+.language-buttons button:focus {
+    background: var(--accent);
+    color: #fff;
+    outline: none;
+    transform: translateY(-2px);
+}
+
+/* Ativo (idioma selecionado) */
+.language-buttons button.active {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+/* Tooltip responsivo e animado para botões de idioma */
+.language-buttons button {
+    position: relative;
+}
+
+/* Tooltip escondido por padrão */
+.language-buttons button::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 120%; 
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    background-color: #333;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+}
+
+/* Triângulo do tooltip */
+.language-buttons button::before {
+    content: '';
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+/* Mostrar tooltip ao hover ou focus */
+.language-buttons button:hover::after,
+.language-buttons button:hover::before,
+.language-buttons button:focus::after,
+.language-buttons button:focus::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-4px);
+}
+
+/* Mobile: mostrar tooltip ao toque */
+@media (hover: none) and (pointer: coarse) {
+    .language-buttons button:active::after,
+    .language-buttons button:active::before {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-4px);
+    }
 }

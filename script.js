@@ -58,19 +58,22 @@ async function loadLanguage(lang) {
         const res = await fetch(`translations/${lang}.json`);
         const translations = await res.json();
 
+        // Atualiza todos os textos
         document.querySelectorAll('[data-lang-str]').forEach(el => {
-        const key = el.getAttribute('data-lang-str');
-        if (translations[key]) el.textContent = translations[key];
+            const key = el.getAttribute('data-lang-str');
+            if (translations[key]) el.textContent = translations[key];
         });
 
+        // Define o idioma do documento
         document.documentElement.lang = lang;
         localStorage.setItem('preferredLang', lang);
-        } catch (err) {
+
+        // Atualiza botão ativo
+        document.querySelectorAll('.language-buttons button').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('onclick').includes(lang));
+        });
+
+    } catch (err) {
         console.error('Erro ao carregar idioma:', err);
     }
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const savedLang = localStorage.getItem('preferredLang') || 'pt-br';
-        loadLanguage(savedLang);
-    });
+}
