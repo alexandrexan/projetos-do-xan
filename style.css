@@ -2,21 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;600&display=swap");
 
 :root {
-    --bg: #f2ecdf;
-    --bg-2: #e9decc;
-    --card: #fffaf2;
-    --text: #1f2327;
-    --muted: #5f666d;
-    --line: #d8c9b4;
-    --accent: #136f63;
-    --accent-2: #ff6b35;
-    --surface-strong: #f7eddf;
-    --radius: 16px;
-    --container: 1080px;
-    --shadow: 0 12px 26px #0d101007;
-}
-
-:root[data-theme="dark"] {
     --bg: #10151f;
     --bg-2: #0a1119;
     --card: #131b27;
@@ -26,6 +11,8 @@
     --accent: #2bb4a0;
     --accent-2: #ff8a5a;
     --surface-strong: #1b2635;
+    --radius: 16px;
+    --container: 1080px;
     --shadow: 0 18px 32px #00000040;
 }
 
@@ -59,6 +46,11 @@ body.no-scroll {
 .wrap {
     width: min(100%, var(--container));
     margin: 0 auto;
+    display: grid;
+    gap: 18px;
+}
+
+main {
     display: grid;
     gap: 18px;
 }
@@ -138,21 +130,6 @@ nav a.focus-visible::after {
     display: flex;
     align-items: center;
     gap: 8px;
-}
-
-.theme-toggle {
-    border: 1px solid var(--line);
-    background: var(--surface-strong);
-    color: var(--text);
-    border-radius: 10px;
-    padding: 7px 11px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.theme-toggle:hover {
-    border-color: var(--accent);
 }
 
 .hero {
@@ -381,8 +358,14 @@ section.card h2 {
     font-size: 0.9rem;
 }
 
+.curiosity-links {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
 .botao-sc {
-    margin-right: 8px;
     background: #ff8a35;
 }
 
@@ -435,6 +418,9 @@ footer {
 }
 
 .language-buttons button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     border: 1px solid var(--line);
     background: var(--surface-strong);
     color: var(--text);
@@ -446,9 +432,17 @@ footer {
     transition: all 0.2s ease;
 }
 
+.lang-flag {
+    width: 18px;
+    height: 14px;
+    border-radius: 2px;
+    object-fit: cover;
+    box-shadow: 0 0 0 1px #0000001a;
+    flex-shrink: 0;
+}
+
 .language-buttons button:hover,
-.language-buttons button:focus,
-.theme-toggle:focus {
+.language-buttons button:focus {
     border-color: var(--accent);
 }
 
@@ -572,4 +566,8 @@ img {
     section.card {
         padding: 16px;
     }
+}
+
+#curiosidades p {
+    margin-bottom: 18px;
 }

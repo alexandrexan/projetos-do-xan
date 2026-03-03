@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollSuaveLinksInternos();
     aplicarLazyLoadingImagens();
     animarCardsProjetos();
+    configurarBandeirasIdioma();
     configurarTrocaIdioma();
     configurarFiltroProjetos();
     configurarModalProjetos();
-    configurarTema();
 });
 
 function atualizarAnoFooter() {
@@ -54,6 +54,39 @@ function animarCardsProjetos() {
     });
 }
 
+function configurarBandeirasIdioma() {
+    const flagByLang = {
+        'pt-br': { src: 'https://flagcdn.com/br.svg', label: 'PT-BR' },
+        en: { src: 'https://flagcdn.com/us.svg', label: 'EN' },
+        es: { src: 'https://flagcdn.com/es.svg', label: 'ES' }
+    };
+
+    document.querySelectorAll('.language-buttons button[data-lang]').forEach(button => {
+        const lang = button.dataset.lang;
+        const config = flagByLang[lang];
+        if (!config || button.querySelector('.lang-flag')) return;
+
+        const currentLabel = (button.textContent || '').trim() || config.label;
+
+        button.setAttribute('aria-label', currentLabel);
+        button.textContent = '';
+
+        const flag = document.createElement('img');
+        flag.className = 'lang-flag';
+        flag.src = config.src;
+        flag.width = 18;
+        flag.height = 14;
+        flag.alt = '';
+        flag.decoding = 'async';
+        flag.setAttribute('aria-hidden', 'true');
+
+        const label = document.createElement('span');
+        label.textContent = currentLabel;
+
+        button.append(flag, label);
+    });
+}
+
 function configurarTrocaIdioma() {
     const languageButtons = document.querySelectorAll('.language-buttons button[data-lang]');
     const savedLang = localStorage.getItem('preferredLang') || 'pt-br';
@@ -91,7 +124,6 @@ async function loadLanguage(lang) {
         document.documentElement.lang = lang;
         localStorage.setItem('preferredLang', lang);
         atualizarBotaoIdiomaAtivo(lang);
-        atualizarTextoTema();
     } catch (err) {
         console.error('Erro ao carregar idioma:', err);
     }
@@ -195,35 +227,4 @@ function fecharModalProjeto() {
     modal.classList.remove('open');
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('no-scroll');
-}
-
-function configurarTema() {
-    const toggle = document.getElementById('theme-toggle');
-    if (!toggle) return;
-
-    const savedTheme = localStorage.getItem('preferredTheme') || 'light';
-    aplicarTema(savedTheme);
-
-    toggle.addEventListener('click', () => {
-        const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-        aplicarTema(nextTheme);
-        localStorage.setItem('preferredTheme', nextTheme);
-    });
-}
-
-function aplicarTema(theme) {
-    document.documentElement.dataset.theme = theme;
-    atualizarTextoTema();
-}
-
-function atualizarTextoTema() {
-    const toggle = document.getElementById('theme-toggle');
-    if (!toggle) return;
-
-    const isDark = document.documentElement.dataset.theme === 'dark';
-    const label = isDark
-        ? currentTranslations.themeToLight || 'Modo claro'
-        : currentTranslations.themeToDark || 'Modo escuro';
-
-    toggle.textContent = label;
 }
