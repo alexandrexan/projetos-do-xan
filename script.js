@@ -222,7 +222,6 @@ function abrirModalProjeto(article) {
 
     const projectId = article.dataset.project;
     const title = state.currentTranslations[`${projectId}Name`] || '';
-    const description = state.currentTranslations[`${projectId}Desc`] || '';
     const highlights = [1, 2, 3]
         .map(index => state.currentTranslations[`${projectId}Detail${index}`])
         .filter(Boolean);
@@ -237,7 +236,9 @@ function abrirModalProjeto(article) {
         modalTitle.textContent = title;
     }
     if (modalDescription) {
-        modalDescription.textContent = description;
+        // In project details, keep only the technical highlights list.
+        modalDescription.textContent = '';
+        modalDescription.hidden = true;
     }
 
     if (modalHighlights) {
