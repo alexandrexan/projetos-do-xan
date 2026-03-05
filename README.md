@@ -1,30 +1,83 @@
-# 🏀 Portfolio | Alexandre (Xan)
+# Alexandre Araujo
 
-Bem-vindo ao meu **portfólio online** — um site criado para apresentar meu perfil, habilidades e projetos em andamento.
+Desenvolvedor Front-End focado na criação de interfaces web modernas, responsivas e funcionais.  
+Construo aplicações utilizando JavaScript e tecnologias do ecossistema web com foco em experiência do usuário e boas práticas de desenvolvimento.
 
-Welcome to my **online portfolio** — A website built to present my profile, skills, and current projects.
-
----
-
-## 🛠️ Tecnologias | Tech Stack 
-![HTML5](https://img.shields.io/badge/HTML5-000000?style=for-the-badge&logo=html5&logoColor=E34F26)
-![CSS3](https://img.shields.io/badge/CSS3-000000?style=for-the-badge&logo=css3&logoColor=1572B6)
-![JavaScript](https://img.shields.io/badge/JavaScript-000000?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+🔗 Portfólio: https://alexandrexan.github.io/projetos-do-xan/
 
 ---
 
-## 🚀 Demonstração | Live Demo
-🔗 [Clique aqui! | Click here!](https://alexandrexan.github.io/projetos-do-xan/)
+## Sobre
+
+Desenvolvedor em formação com foco em Front-End.  
+Meu objetivo é transformar ideias em interfaces funcionais e intuitivas, utilizando tecnologias modernas da web.
+
+Atualmente estou aprofundando conhecimentos em:
+
+- HTML5
+- CSS3
+- JavaScript
+- TypeScript
+- React
+- Git e GitHub
+- Responsividade
+- Boas práticas de UI
+
+Busco oportunidade como **Desenvolvedor Front-End Júnior** para aplicar e expandir essas habilidades em projetos reais.
 
 ---
 
-## 📬  Contato | Contact
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-000000?style=for-the-badge&logo=linkedin&logoColor=0A66C2)](https://linkedin.com/in/alexandreap)
-[![Email](https://img.shields.io/badge/Email-000000?style=for-the-badge&logo=gmail&logoColor=D14836)](mailto:xampsbeatz@gmail.com)
-[![Linktree](https://img.shields.io/badge/Linktree-000000?style=for-the-badge&logo=linktree&logoColor=39E09B)](https://linktr.ee/xampsbeatz)
+## Tecnologias
+
+**Front-End**
+
+- HTML5
+- CSS3
+- JavaScript
+- TypeScript
+- React
+
+**Ferramentas**
+
+- Git
+- GitHub
+- VS Code
+
+**Conceitos**
+
+- Responsividade
+- Layout moderno
+- Estrutura semântica
+- Organização de código
 
 ---
- 
-⭐ Se você curtir o projeto, considere dar uma estrela aqui no repositório!
 
-⭐ If you like this project, consider giving it a star!
+## Projetos
+
+### Portfólio de Projetos
+Aplicação web com diversos projetos desenvolvidos durante meus estudos.
+
+🔗 Acessar:  
+https://alexandrexan.github.io/projetos-do-xan/
+
+Principais tipos de projetos presentes no portfólio:
+
+- Aplicações JavaScript
+- Interfaces responsivas
+- Projetos práticos de estudo
+- Experimentos com UI
+
+Cada projeto foi criado para consolidar conceitos fundamentais do desenvolvimento front-end.
+
+---
+
+## Objetivo profissional
+
+Construir experiência prática em desenvolvimento web, participando da criação de interfaces modernas e acessíveis.
+
+Interesse em atuar em:
+
+- Desenvolvimento Front-End
+- Interfaces Web
+- Projetos JavaScript
+- Desenvolvimento de aplicações web
