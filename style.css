@@ -39,6 +39,24 @@ body {
     transition: background 0.25s ease, color 0.25s ease;
 }
 
+.skip-link {
+    position: absolute;
+    left: 12px;
+    top: -48px;
+    z-index: 100;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 12px;
+}
+
 body.no-scroll {
     overflow: hidden;
 }
@@ -188,6 +206,10 @@ nav a.focus-visible::after {
     border-color: var(--line);
 }
 
+.btn.ghost:hover {
+    background: var(--line);
+}
+
 section.card {
     background: var(--card);
     border: 1px solid var(--line);
@@ -284,6 +306,7 @@ section.card h2 {
 .proj p {
     color: var(--muted);
     font-size: 0.92rem;
+    white-space: pre-line;
 }
 
 .tech-badges {

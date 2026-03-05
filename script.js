@@ -1,69 +1,97 @@
-let currentLang = 'pt-br';
-let currentTranslations = {};
+const DEFAULT_LANG = 'pt-br';
+const FLAG_BY_LANG = {
+    'pt-br': { src: 'https://flagcdn.com/br.svg', label: 'PT-BR' },
+    en: { src: 'https://flagcdn.com/us.svg', label: 'EN' },
+    es: { src: 'https://flagcdn.com/es.svg', label: 'ES' }
+};
 
-document.addEventListener('DOMContentLoaded', () => {
+const state = {
+    currentLang: DEFAULT_LANG,
+    currentTranslations: {}
+};
+
+const selectAll = (selector, context = document) => Array.from(context.querySelectorAll(selector));
+
+document.addEventListener('DOMContentLoaded', iniciarAplicacao);
+
+function iniciarAplicacao() {
     atualizarAnoFooter();
     melhorarAcessibilidadeNav();
     scrollSuaveLinksInternos();
     aplicarLazyLoadingImagens();
     animarCardsProjetos();
+    formatarResumoProjetos();
     configurarBandeirasIdioma();
     configurarTrocaIdioma();
     configurarFiltroProjetos();
     configurarModalProjetos();
-});
+}
 
 function atualizarAnoFooter() {
     const yearSpan = document.getElementById('year');
-    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
 }
 
 function melhorarAcessibilidadeNav() {
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
+    selectAll('nav a').forEach(link => {
         link.addEventListener('focus', () => link.classList.add('focus-visible'));
         link.addEventListener('blur', () => link.classList.remove('focus-visible'));
     });
 }
 
 function scrollSuaveLinksInternos() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                e.preventDefault();
-                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+    selectAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', event => {
+            const targetId = anchor.getAttribute('href');
+            const targetElement = targetId ? document.querySelector(targetId) : null;
+            if (!targetElement) return;
+
+            event.preventDefault();
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
 }
 
 function aplicarLazyLoadingImagens() {
-    if ('loading' in HTMLImageElement.prototype) {
-        document.querySelectorAll('img').forEach(img => {
-            img.setAttribute('loading', 'lazy');
-        });
-    }
+    if (!('loading' in HTMLImageElement.prototype)) return;
+
+    selectAll('img').forEach(img => {
+        img.setAttribute('loading', 'lazy');
+    });
 }
 
 function animarCardsProjetos() {
-    document.querySelectorAll('.proj').forEach(card => {
+    selectAll('.proj').forEach(card => {
         card.addEventListener('mouseenter', () => card.classList.add('card-hover'));
         card.addEventListener('mouseleave', () => card.classList.remove('card-hover'));
     });
 }
 
-function configurarBandeirasIdioma() {
-    const flagByLang = {
-        'pt-br': { src: 'https://flagcdn.com/br.svg', label: 'PT-BR' },
-        en: { src: 'https://flagcdn.com/us.svg', label: 'EN' },
-        es: { src: 'https://flagcdn.com/es.svg', label: 'ES' }
-    };
+function formatarResumoProjetos() {
+    const projectDescriptions = selectAll('.proj p[data-lang-str$="Desc"]');
+    const replaceRules = [
+        [/\.\s*(Solução:|Solucao:|Solution:|Solución:|Solucion:)/g, '.\n$1'],
+        [/\.\s*(Resultado:|Outcome:)/g, '.\n$1']
+    ];
 
-    document.querySelectorAll('.language-buttons button[data-lang]').forEach(button => {
+    projectDescriptions.forEach(description => {
+        const originalText = description.textContent || '';
+        let formattedText = originalText.replace(/\s*\n+\s*/g, ' ').trim();
+
+        replaceRules.forEach(([pattern, replacement]) => {
+            formattedText = formattedText.replace(pattern, replacement);
+        });
+
+        description.textContent = formattedText;
+    });
+}
+
+function configurarBandeirasIdioma() {
+    selectAll('.language-buttons button[data-lang]').forEach(button => {
         const lang = button.dataset.lang;
-        const config = flagByLang[lang];
+        const config = lang ? FLAG_BY_LANG[lang] : null;
         if (!config || button.querySelector('.lang-flag')) return;
 
         const currentLabel = (button.textContent || '').trim() || config.label;
@@ -88,13 +116,15 @@ function configurarBandeirasIdioma() {
 }
 
 function configurarTrocaIdioma() {
-    const languageButtons = document.querySelectorAll('.language-buttons button[data-lang]');
-    const savedLang = localStorage.getItem('preferredLang') || 'pt-br';
+    const languageButtons = selectAll('.language-buttons button[data-lang]');
+    const savedLang = localStorage.getItem('preferredLang') || DEFAULT_LANG;
 
     languageButtons.forEach(button => {
         button.addEventListener('click', () => {
             const lang = button.dataset.lang;
-            if (lang) loadLanguage(lang);
+            if (lang) {
+                loadLanguage(lang);
+            }
         });
     });
 
@@ -102,42 +132,47 @@ function configurarTrocaIdioma() {
 }
 
 function atualizarBotaoIdiomaAtivo(lang) {
-    document.querySelectorAll('.language-buttons button[data-lang]').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
+    selectAll('.language-buttons button[data-lang]').forEach(button => {
+        button.classList.toggle('active', button.dataset.lang === lang);
     });
 }
 
 async function loadLanguage(lang) {
     try {
-        const res = await fetch(`translations/${lang}.json`);
-        if (!res.ok) throw new Error(`Status ${res.status}`);
+        const response = await fetch(`translations/${lang}.json`);
+        if (!response.ok) {
+            throw new Error(`Status ${response.status}`);
+        }
 
-        const translations = await res.json();
-        currentLang = lang;
-        currentTranslations = translations;
+        const translations = await response.json();
+        state.currentLang = lang;
+        state.currentTranslations = translations;
 
-        document.querySelectorAll('[data-lang-str]').forEach(el => {
-            const key = el.getAttribute('data-lang-str');
-            if (translations[key]) el.textContent = translations[key];
+        selectAll('[data-lang-str]').forEach(element => {
+            const key = element.getAttribute('data-lang-str');
+            if (key && translations[key]) {
+                element.textContent = translations[key];
+            }
         });
+        formatarResumoProjetos();
 
         document.documentElement.lang = lang;
         localStorage.setItem('preferredLang', lang);
         atualizarBotaoIdiomaAtivo(lang);
-    } catch (err) {
-        console.error('Erro ao carregar idioma:', err);
+    } catch (error) {
+        console.error('Erro ao carregar idioma:', error);
     }
 }
 
 function configurarFiltroProjetos() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.proj');
+    const filterButtons = selectAll('.filter-btn');
+    const projectCards = selectAll('.proj');
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             const filter = button.dataset.filter;
 
-            filterButtons.forEach(btn => btn.classList.remove('active'));
+            filterButtons.forEach(currentButton => currentButton.classList.remove('active'));
             button.classList.add('active');
 
             projectCards.forEach(card => {
@@ -152,13 +187,13 @@ function configurarFiltroProjetos() {
 function configurarModalProjetos() {
     const modal = document.getElementById('project-modal');
     const closeButton = document.getElementById('modal-close');
-    const detailButtons = document.querySelectorAll('[data-details]');
 
-    detailButtons.forEach(button => {
+    selectAll('[data-details]').forEach(button => {
         button.addEventListener('click', () => {
             const article = button.closest('.proj');
-            if (!article) return;
-            abrirModalProjeto(article);
+            if (article) {
+                abrirModalProjeto(article);
+            }
         });
     });
 
@@ -168,7 +203,9 @@ function configurarModalProjetos() {
 
     if (modal) {
         modal.addEventListener('click', event => {
-            if (event.target === modal) fecharModalProjeto();
+            if (event.target === modal) {
+                fecharModalProjeto();
+            }
         });
     }
 
@@ -184,14 +221,11 @@ function abrirModalProjeto(article) {
     if (!modal) return;
 
     const projectId = article.dataset.project;
-    const title = currentTranslations[`${projectId}Name`] || '';
-    const description = currentTranslations[`${projectId}Desc`] || '';
-
-    const highlights = [
-        currentTranslations[`${projectId}Detail1`],
-        currentTranslations[`${projectId}Detail2`],
-        currentTranslations[`${projectId}Detail3`]
-    ].filter(Boolean);
+    const title = state.currentTranslations[`${projectId}Name`] || '';
+    const description = state.currentTranslations[`${projectId}Desc`] || '';
+    const highlights = [1, 2, 3]
+        .map(index => state.currentTranslations[`${projectId}Detail${index}`])
+        .filter(Boolean);
 
     const modalTitle = document.getElementById('modal-title');
     const modalDescription = document.getElementById('modal-description');
@@ -199,21 +233,29 @@ function abrirModalProjeto(article) {
     const modalDemo = document.getElementById('modal-demo');
     const modalCode = document.getElementById('modal-code');
 
-    if (modalTitle) modalTitle.textContent = title;
-    if (modalDescription) modalDescription.textContent = description;
+    if (modalTitle) {
+        modalTitle.textContent = title;
+    }
+    if (modalDescription) {
+        modalDescription.textContent = description;
+    }
 
     if (modalHighlights) {
         modalHighlights.innerHTML = '';
         highlights.forEach(item => {
-            const li = document.createElement('li');
-            li.textContent = item;
-            modalHighlights.appendChild(li);
+            const listItem = document.createElement('li');
+            listItem.textContent = item;
+            modalHighlights.appendChild(listItem);
         });
     }
 
-    const anchors = article.querySelectorAll('a');
-    if (modalDemo && anchors[0]) modalDemo.href = anchors[0].href;
-    if (modalCode && anchors[1]) modalCode.href = anchors[1].href;
+    const anchors = selectAll('a', article);
+    if (modalDemo && anchors[0]) {
+        modalDemo.href = anchors[0].href;
+    }
+    if (modalCode && anchors[1]) {
+        modalCode.href = anchors[1].href;
+    }
 
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');

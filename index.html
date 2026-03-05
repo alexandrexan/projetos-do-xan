@@ -1,15 +1,20 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Portfólio de Alexandre (Xan) Araujo - desenvolvedor frontend. Projetos em HTML, CSS, JavaScript e React. Contato, CV e demais informações.">
-    <meta property="og:title" content="Alexandre (Xan) Araujo - Desenvolvedor Frontend">
-    <meta property="og:description" content="Portfólio - projetos, skills e contato.">
+        content="Portfolio de Alexandre (Xan) Araujo, Front-end Developer Jr. Projetos em HTML, CSS, JavaScript e React com foco em performance, acessibilidade e UX.">
+    <meta name="robots" content="index,follow">
+    <meta property="og:title" content="Alexandre (Xan) Araujo | Front-end Developer Jr">
+    <meta property="og:description"
+        content="Portfolio com projetos, stack tecnica e contato direto para oportunidades em Front-end.">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Portfolio Alexandre Araujo">
 
-    <title data-lang-str="title">Alexandre Araujo - Desenvolvedor Front-end</title>
+    <title data-lang-str="title">Alexandre Araujo | Front-end Developer</title>
 
     <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
@@ -21,7 +26,10 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
+    <a class="skip-link" href="#main-content" data-lang-str="skipToContent">Pular para conteúdo principal</a>
+
     <div class="wrap">
         <header>
             <div class="brand">
@@ -30,7 +38,7 @@
                 </div>
                 <div>
                     <div style="font-weight:700">Alexandre (Xan) Araujo</div>
-                    <div class="small muted" data-lang-str="title">Desenvolvedor Front-end</div>
+                    <div class="small muted" data-lang-str="title">Front-end Developer</div>
                 </div>
             </div>
 
@@ -45,26 +53,29 @@
             <div class="header-actions">
                 <div class="language-buttons">
                     <button type="button" data-lang="pt-br" data-tooltip="Ver o site em Português do Brasil">PT-BR</button>
-                    <button type="button" data-lang="en" data-tooltip="View the site in English">EN</button>
-                    <button type="button" data-lang="es" data-tooltip="Ver el sitio en Español">ES</button>
+                    <button type="button" data-lang="en" data-tooltip="View this site in English">EN</button>
+                    <button type="button" data-lang="es" data-tooltip="Ver este sitio en Español">ES</button>
                 </div>
             </div>
         </header>
 
-        <main>
+        <main id="main-content">
             <section class="hero">
-                <h1 data-lang-str="heroTitle">Aprendizado contínuo por meio de resultados concretos</h1>
-                <p data-lang-str="heroSub">Interfaces com foco em performance, clareza visual e boa experiência para usuários reais.</p>
+                <h1 data-lang-str="heroTitle">Front-end Developer Jr com foco em performance e acessibilidade</h1>
+                <p data-lang-str="heroSub">Desenvolvo interfaces claras, responsivas e prontas para produção com HTML, CSS, JavaScript e React.</p>
                 <div class="ctas">
                     <a class="btn" href="#projetos" data-lang-str="heroBtnProjects">Ver projetos</a>
-                    <a class="btn ghost" href="cv-xan/cv-alexandre-frontend-v4.pdf" download data-lang-str="heroBtnCV">Baixar CV</a>
+                    <a class="btn ghost" href="cv-xan/cv-alexandre-frontend-v4.pdf" target="_blank" rel="noopener noreferrer"
+                        data-lang-str="heroBtnCV">Visualizar CV</a>
+                    <a class="btn ghost" href="#contato" data-lang-str="heroBtnContact">Falar comigo</a>
                 </div>
             </section>
 
             <section class="card" id="sobre">
                 <h2 data-lang-str="about">Sobre mim</h2>
                 <p data-lang-str="aboutText">
-                    Sou desenvolvedor Front-end, entusiasta por transformar ideias em interfaces funcionais e atraentes. Tenho experiência prática com projetos pessoais e estudo constante de tecnologias modernas, com foco em React, JavaScript, HTML e CSS. Estou sempre em busca de aprender novas ferramentas e aplicar boas práticas de UI/UX para entregar resultados de qualidade. Tenho disciplina, curiosidade e disposição para enfrentar desafios e crescer junto com a equipe.
+                    Sou desenvolvedor Front-end Junior e transformo requisitos em interfaces reutilizáveis, acessíveis e fáceis de manter.
+                    Tenho prática com projetos reais de estudo, versionamento com Git/GitHub e foco em entrega incremental com boa comunicação em equipe.
                 </p>
                 <div class="skills">
                     <span class="tag" data-lang-str="skillsHTML">HTML</span>
@@ -76,8 +87,8 @@
             </section>
 
             <section class="card" id="projetos">
-                <h2 data-lang-str="projectsTitle">Projetos em Destaque</h2>
-                <p class="muted" data-lang-str="projectsSubtitle">Filtre por tecnologia e abra os detalhes para ver decisões técnicas de cada projeto.</p>
+                <h2 data-lang-str="projectsTitle">Projetos em destaque</h2>
+                <p class="muted" data-lang-str="projectsSubtitle">Cada projeto resume Problema, Solução e Resultado para facilitar avaliação técnica.</p>
 
                 <div class="project-filters" aria-label="Filtrar projetos">
                     <button type="button" class="filter-btn active" data-filter="all" data-lang-str="filterAll">Todos</button>
@@ -89,7 +100,7 @@
                 <div class="projects">
                     <article class="proj" data-tech="html css js" data-project="project1">
                         <h3 data-lang-str="project1Name">Conversor de Moedas R$ > US$</h3>
-                        <p data-lang-str="project1Desc">SPA que consome API de câmbio, valida inputs e formata valores em tempo real.</p>
+                        <p data-lang-str="project1Desc">Problema: conversão manual lenta. Solução: SPA com API e validação. Resultado: conversão rápida e confiável.</p>
                         <div class="tech-badges">
                             <span class="badge html">HTML</span>
                             <span class="badge css">CSS</span>
@@ -97,14 +108,16 @@
                         </div>
                         <div class="links">
                             <button class="tag details-btn" type="button" data-details data-lang-str="projectDetailsBtn">Detalhes</button>
-                            <a class="tag link-animado" href="https://alexandrexan.github.io/conversor-de-moedas/" target="_blank" rel="noopener noreferrer" data-lang-str="project1Demo">Demo</a>
-                            <a class="tag" href="https://github.com/alexandrexan/conversor-de-moedas" target="_blank" rel="noopener noreferrer" data-lang-str="project1Code">Código</a>
+                            <a class="tag link-animado" href="https://alexandrexan.github.io/conversor-de-moedas/" target="_blank"
+                                rel="noopener noreferrer" data-lang-str="project1Demo">Demo</a>
+                            <a class="tag" href="https://github.com/alexandrexan/conversor-de-moedas" target="_blank"
+                                rel="noopener noreferrer" data-lang-str="project1Code">Código</a>
                         </div>
                     </article>
 
                     <article class="proj" data-tech="html css js" data-project="project2">
                         <h3 data-lang-str="project2Name">Número Secreto (Game)</h3>
-                        <p data-lang-str="project2Desc">Jogo educativo em JavaScript, praticando manipulação de DOM, lógica e eventos de usuário.</p>
+                        <p data-lang-str="project2Desc">Problema: treino de lógica com baixo engajamento. Solução: jogo com feedback imediato. Resultado: experiência interativa e didática.</p>
                         <div class="tech-badges">
                             <span class="badge html">HTML</span>
                             <span class="badge css">CSS</span>
@@ -112,28 +125,32 @@
                         </div>
                         <div class="links">
                             <button class="tag details-btn" type="button" data-details data-lang-str="projectDetailsBtn">Detalhes</button>
-                            <a class="tag link-animado" href="https://alexandrexan.github.io/numero-secreto/" target="_blank" rel="noopener noreferrer" data-lang-str="project2Demo">Demo</a>
-                            <a class="tag" href="https://github.com/alexandrexan/numero-secreto" target="_blank" rel="noopener noreferrer" data-lang-str="project2Code">Código</a>
+                            <a class="tag link-animado" href="https://alexandrexan.github.io/numero-secreto/" target="_blank"
+                                rel="noopener noreferrer" data-lang-str="project2Demo">Demo</a>
+                            <a class="tag" href="https://github.com/alexandrexan/numero-secreto" target="_blank"
+                                rel="noopener noreferrer" data-lang-str="project2Code">Código</a>
                         </div>
                     </article>
 
                     <article class="proj" data-tech="html css" data-project="project3">
                         <h3 data-lang-str="project3Name">Cidade de Mentira</h3>
-                        <p data-lang-str="project3Desc">Página com layout responsivo e navegação dinâmica.</p>
+                        <p data-lang-str="project3Desc">Problema: conteúdo disperso. Solução: layout responsivo e hierarquia visual. Resultado: leitura fluida em desktop e mobile.</p>
                         <div class="tech-badges">
                             <span class="badge html">HTML</span>
                             <span class="badge css">CSS</span>
                         </div>
                         <div class="links">
                             <button class="tag details-btn" type="button" data-details data-lang-str="projectDetailsBtn">Detalhes</button>
-                            <a class="tag link-animado" href="https://alexandrexan.github.io/projeto-cidade-de-mentira/" target="_blank" rel="noopener noreferrer" data-lang-str="project1Demo">Demo</a>
-                            <a class="tag" href="https://github.com/alexandrexan/projeto-cidade-de-mentira" target="_blank" rel="noopener noreferrer" data-lang-str="project1Code">Código</a>
+                            <a class="tag link-animado" href="https://alexandrexan.github.io/projeto-cidade-de-mentira/" target="_blank"
+                                rel="noopener noreferrer" data-lang-str="project3Demo">Demo</a>
+                            <a class="tag" href="https://github.com/alexandrexan/projeto-cidade-de-mentira" target="_blank"
+                                rel="noopener noreferrer" data-lang-str="project3Code">Código</a>
                         </div>
                     </article>
 
                     <article class="proj" data-tech="html css js" data-project="project4">
                         <h3 data-lang-str="project4Name">Mika Pets</h3>
-                        <p data-lang-str="project4Desc">Landing page responsiva para serviço de cuidados para cães, com design limpo e navegação intuitiva.</p>
+                        <p data-lang-str="project4Desc">Problema: captar clientes com clareza. Solução: landing page com CTA forte. Resultado: jornada objetiva para contato.</p>
                         <div class="tech-badges">
                             <span class="badge html">HTML</span>
                             <span class="badge css">CSS</span>
@@ -141,28 +158,32 @@
                         </div>
                         <div class="links">
                             <button class="tag details-btn" type="button" data-details data-lang-str="projectDetailsBtn">Detalhes</button>
-                            <a class="tag link-animado" href="https://alexandrexan.github.io/mika-pets/" target="_blank" rel="noopener noreferrer" data-lang-str="project1Demo">Demo</a>
-                            <a class="tag" href="https://github.com/alexandrexan/mika-pets" target="_blank" rel="noopener noreferrer" data-lang-str="project1Code">Código</a>
+                            <a class="tag link-animado" href="https://alexandrexan.github.io/mika-pets/" target="_blank"
+                                rel="noopener noreferrer" data-lang-str="project4Demo">Demo</a>
+                            <a class="tag" href="https://github.com/alexandrexan/mika-pets" target="_blank"
+                                rel="noopener noreferrer" data-lang-str="project4Code">Código</a>
                         </div>
                     </article>
 
                     <article class="proj" data-tech="html css" data-project="project5">
                         <h3 data-lang-str="project5Name">Projeto Android</h3>
-                        <p data-lang-str="project5Desc">Página temática sobre Android, explorando imagens e organização de conteúdo.</p>
+                        <p data-lang-str="project5Desc">Problema: página longa sem organização. Solução: seções e composição visual consistente. Resultado: navegação simples e escaneável.</p>
                         <div class="tech-badges">
                             <span class="badge html">HTML</span>
                             <span class="badge css">CSS</span>
                         </div>
                         <div class="links">
                             <button class="tag details-btn" type="button" data-details data-lang-str="projectDetailsBtn">Detalhes</button>
-                            <a class="tag link-animado" href="https://alexandrexan.github.io/projeto-android/" target="_blank" rel="noopener noreferrer" data-lang-str="project1Demo">Demo</a>
-                            <a class="tag" href="https://github.com/alexandrexan/projeto-android" target="_blank" rel="noopener noreferrer" data-lang-str="project1Code">Código</a>
+                            <a class="tag link-animado" href="https://alexandrexan.github.io/projeto-android/" target="_blank"
+                                rel="noopener noreferrer" data-lang-str="project5Demo">Demo</a>
+                            <a class="tag" href="https://github.com/alexandrexan/projeto-android" target="_blank"
+                                rel="noopener noreferrer" data-lang-str="project5Code">Código</a>
                         </div>
                     </article>
 
                     <article class="proj" data-tech="html css js" data-project="project6">
                         <h3 data-lang-str="project6Name">XAMPSBEATZ</h3>
-                        <p data-lang-str="project6Desc">Portfólio musical interativo para divulgação de beats, com foco em design minimalista e navegação fluida.</p>
+                        <p data-lang-str="project6Desc">Problema: divulgar portfólio musical com identidade própria. Solução: experiência visual minimalista. Resultado: descoberta rápida dos trabalhos.</p>
                         <div class="tech-badges">
                             <span class="badge html">HTML</span>
                             <span class="badge css">CSS</span>
@@ -170,8 +191,10 @@
                         </div>
                         <div class="links">
                             <button class="tag details-btn" type="button" data-details data-lang-str="projectDetailsBtn">Detalhes</button>
-                            <a class="tag link-animado" href="https://alexandrexan.github.io/xampsbeatz/" target="_blank" rel="noopener noreferrer" data-lang-str="project1Demo">Demo</a>
-                            <a class="tag" href="https://github.com/alexandrexan/xampsbeatz" target="_blank" rel="noopener noreferrer" data-lang-str="project1Code">Código</a>
+                            <a class="tag link-animado" href="https://alexandrexan.github.io/xampsbeatz/" target="_blank"
+                                rel="noopener noreferrer" data-lang-str="project6Demo">Demo</a>
+                            <a class="tag" href="https://github.com/alexandrexan/xampsbeatz" target="_blank"
+                                rel="noopener noreferrer" data-lang-str="project6Code">Código</a>
                         </div>
                     </article>
                 </div>
@@ -182,38 +205,45 @@
                 <div class="process-grid">
                     <article class="process-item">
                         <h3 data-lang-str="processStep1Title">1. Planejamento</h3>
-                        <p data-lang-str="processStep1Text">Defino objetivo, público e prioridades visuais para manter foco em resultado.</p>
+                        <p data-lang-str="processStep1Text">Defino o problema, os objetivos do projeto e o público-alvo para orientar decisões técnicas desde o início.</p>
                     </article>
                     <article class="process-item">
                         <h3 data-lang-str="processStep2Title">2. Construção</h3>
-                        <p data-lang-str="processStep2Text">Desenvolvo estrutura responsiva, componentes reutilizáveis e interação clara.</p>
+                        <p data-lang-str="processStep2Text">Implemento estrutura responsiva, componentes reutilizáveis e código limpo.</p>
                     </article>
                     <article class="process-item">
                         <h3 data-lang-str="processStep3Title">3. Refino e Publicação</h3>
-                        <p data-lang-str="processStep3Text">Valido acessibilidade, desempenho e ajusto detalhes para uma entrega profissional.</p>
+                        <p data-lang-str="processStep3Text">Valido acessibilidade, performance e detalhes visuais para entrega profissional.</p>
                     </article>
                 </div>
             </section>
 
             <section class="card" id="curiosidades">
                 <h2 data-lang-str="curiosities">Além do Código</h2>
-                <p data-lang-str="curiositiesText">Produzo música nas horas vagas e aplico o mesmo cuidado criativo no desenvolvimento.</p>
+                <p data-lang-str="curiositiesText">Produzo música nas horas vagas e aplico o mesmo cuidado com ritmo, consistência e detalhe no Front-end.</p>
                 <div class="curiosity-links">
-                    <a class="btn botao-sc" href="https://soundcloud.com/xampsbeatz" target="_blank" rel="noopener noreferrer" data-lang-str="soundcloud">Ouvir beats no SoundCloud</a>
-                    <a class="btn botao-yt" href="https://www.youtube.com/@xampsbeatz" target="_blank" rel="noopener noreferrer" data-lang-str="youtube">Ouvir no YouTube</a>
+                    <a class="btn botao-sc" href="https://soundcloud.com/xampsbeatz" target="_blank" rel="noopener noreferrer"
+                        data-lang-str="soundcloud">Ouvir no SoundCloud</a>
+                    <a class="btn botao-yt" href="https://www.youtube.com/@xampsbeatz" target="_blank" rel="noopener noreferrer"
+                        data-lang-str="youtube">Ouvir no YouTube</a>
                 </div>
             </section>
 
             <section class="card" id="contato">
                 <h2 data-lang-str="contact">Contato</h2>
+                <p class="muted" data-lang-str="contactLead">Aberto para oportunidades de Front-end Junior em formato remoto ou híbrido.</p>
                 <p><strong>Email:</strong> <a href="mailto:xampsbeatz@gmail.com">xampsbeatz@gmail.com</a></p>
-                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alexandreap/" target="_blank" rel="noopener noreferrer">linkedin.com/in/alexandreap/</a></p>
-                <p><strong>GitHub:</strong> <a href="https://github.com/alexandrexan" target="_blank" rel="noopener noreferrer">github.com/alexandrexan</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alexandreap/" target="_blank"
+                        rel="noopener noreferrer">linkedin.com/in/alexandreap/</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/alexandrexan" target="_blank"
+                        rel="noopener noreferrer">github.com/alexandrexan</a></p>
             </section>
         </main>
 
         <footer>
-            <div><span id="year"></span> <span data-lang-str="footerSuffix">Alexandre (Xan) Araujo - Desenvolvedor Front-end</span></div>
+            <div>
+                <span id="year"></span> <span data-lang-str="footerSuffix">Alexandre (Xan) Araujo - Front-end Developer</span>
+            </div>
         </footer>
     </div>
 
@@ -226,9 +256,11 @@
             <ul id="modal-highlights"></ul>
             <div class="modal-actions">
                 <a id="modal-demo" class="btn" href="#" target="_blank" rel="noopener noreferrer" data-lang-str="project1Demo">Demo</a>
-                <a id="modal-code" class="btn ghost" href="#" target="_blank" rel="noopener noreferrer" data-lang-str="project1Code">Código</a>
+                <a id="modal-code" class="btn ghost" href="#" target="_blank" rel="noopener noreferrer"
+                    data-lang-str="project1Code">Código</a>
             </div>
         </div>
     </div>
 </body>
+
 </html>
