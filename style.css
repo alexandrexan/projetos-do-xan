@@ -41,7 +41,8 @@ body {
 
 .skip-link {
     position: absolute;
-    left: 12px;
+    left: 50%;
+    transform: translateX(-50%);
     top: -48px;
     z-index: 100;
     padding: 10px 12px;
