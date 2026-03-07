@@ -42,8 +42,8 @@ body {
 .skip-link {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
-    top: -48px;
+    top: 0;
+    transform: translate(-50%, -140%);
     z-index: 100;
     padding: 10px 12px;
     border-radius: 8px;
@@ -51,11 +51,15 @@ body {
     color: #fff;
     font-weight: 700;
     text-decoration: none;
-    transition: top 0.2s ease;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.skip-link:focus {
-    top: 12px;
+.skip-link:focus-visible {
+    transform: translate(-50%, 12px);
+    opacity: 1;
+    pointer-events: auto;
 }
 
 body.no-scroll {
