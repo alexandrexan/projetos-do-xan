@@ -7,6 +7,12 @@ Construo aplicações utilizando JavaScript e tecnologias do ecossistema web com
 
 ---
 
+# Preview
+
+![preview do projeto](./previa-gif/projetos.gif)
+
+---
+
 ## Sobre
 
 Desenvolvedor em formação com foco em Front-End.  
